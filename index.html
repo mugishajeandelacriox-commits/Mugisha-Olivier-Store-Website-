@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Mugisha Olivier Store | Premium Shopping</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: #f9f9f9;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #1e2a3e;
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+        }
+
+        .logo h1 i {
+            color: #e67e22;
+        }
+
+        .language-switch button {
+            background: #2c3e50;
+            border: none;
+            color: white;
+            padding: 5px 12px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .language-switch button:hover {
+            background: #e67e22;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #e67e22;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* ========== LARGE HERO SECTION ========== */
+        .hero-large {
+            position: relative;
+            height: 90vh;
+            min-height: 600px;
+            background: linear-gradient(135deg, #1e2a3e 0%, #2c3e50 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-large::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1920&h=1080&fit=crop') center/cover;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .hero-large .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero-large h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-large p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-large .btn-large {
+            display: inline-block;
+            background: #e67e22;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-large .btn-large:hover {
+            background: #d35400;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Features Grid */
+        .features-large {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .features-large .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .feature-card {
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature-card i {
+            font-size: 3rem;
+            color: #e67e22;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* ========== LARGE CATEGORY BANNERS ========== */
+        .category-banners {
+            padding: 0;
+        }
+
+        .banner-large {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 500px;
+        }
+
+        .banner-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 50px;
+            background: #1e2a3e;
+            color: white;
+        }
+
+        .banner-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .banner-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .banner-content .btn {
+            display: inline-block;
+            background: #e67e22;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            width: fit-content;
+        }
+
+        .banner-image {
+            background-size: cover;
+            background-position: center;
+            min-height: 300px;
+        }
+
+        .banner-large.reverse {
+            direction: rtl;
+        }
+
+        .banner-large.reverse .banner-content {
+            direction: ltr;
+        }
+
+        /* ========== LARGE PRODUCTS SECTION ========== */
+        .products-large {
+            padding: 80px 0;
+            background: #f4f4f4;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #1e2a3e;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .product-grid-large {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card-large {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .product-card-large:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .product-card-large img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .product-card-large h3 {
+            margin: 20px 0 10px;
+            font-size: 1.3rem;
+        }
+
+        .product-card-large .price {
+            font-size: 1.5rem;
+            color: #e67e22;
+            font-weight: bold;
+        }
+
+        .product-card-large .old-price {
+            text-decoration: line-through;
+            color: #999;
+            margin-left: 10px;
+            font-size: 1rem;
+        }
+
+        .add-to-cart-large {
+            background: #1e2a3e;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin: 20px 0;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .add-to-cart-large:hover {
+            background: #e67e22;
+        }
+
+        /* ========== LARGE OFFER BANNER ========== */
+        .offer-banner-large {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .offer-banner-large h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .offer-banner-large .countdown {
+            font-size: 2rem;
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .countdown div {
+            background: rgba(0,0,0,0.3);
+            padding: 15px 25px;
+            border-radius: 10px;
+            min-width: 80px;
+        }
+
+        .countdown span {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        /* ========== LARGE TESTIMONIALS ========== */
+        .testimonials-large {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .testimonial-grid-large {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-card i.fa-star {
+            color: gold;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-card .quote {
+            font-size: 2rem;
+            color: #e67e22;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin: 20px 0;
+        }
+
+        .testimonial-card h4 {
+            color: #1e2a3e;
+        }
+
+        /* ========== LARGE NEWSLETTER ========== */
+        .newsletter-large {
+            background: #1e2a3e;
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .newsletter-large h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-large form {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-large input {
+            padding: 15px 25px;
+            width: 350px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+        }
+
+        .newsletter-large button {
+            background: #e67e22;
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .newsletter-large button:hover {
+            background: #d35400;
+        }
+
+        /* ========== LARGE CONTACT SECTION ========== */
+        .contact-large {
+            padding: 80px 0;
+            background: #f4f4f4;
+        }
+
+        .contact-grid-large {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info-large {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .contact-info-large h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info-large p {
+            margin: 15px 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-info-large i {
+            color: #e67e22;
+            width: 30px;
+        }
+
+        .social-icons-large {
+            margin-top: 30px;
+        }
+
+        .social-icons-large a {
+            color: #1e2a3e;
+            font-size: 1.8rem;
+            margin-right: 20px;
+            transition: 0.3s;
+        }
+
+        .social-icons-large a:hover {
+            color: #e67e22;
+        }
+
+        .contact-form-large {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .contact-form-large input,
+        .contact-form-large textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        .contact-form-large textarea {
+            height: 150px;
+        }
+
+        .contact-form-large button {
+            background: #1e2a3e;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            width: 100%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact-form-large button:hover {
+            background: #e67e22;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f1a24;
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-grid ul {
+            list-style: none;
+        }
+
+        .footer-grid a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer-grid a:hover {
+            color: #e67e22;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #2c3e50;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            nav {
+                display: none;
+                width: 100%;
+            }
+            nav.active {
+                display: block;
+            }
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px 0;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            .language-switch {
+                order: 2;
+            }
+            .hero-large h1 {
+                font-size: 2rem;
+            }
+            .banner-large {
+                grid-template-columns: 1fr;
+            }
+            .banner-large.reverse {
+                direction: ltr;
+            }
+            .contact-grid-large {
+                grid-template-columns: 1fr;
+            }
+            .countdown {
+                flex-direction: column;
+                align-items: center;
+            }
+            .offer-banner-large h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #e67e22;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+            z-index: 99;
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: #d35400;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo">
+            <h1><i class="fas fa-store"></i> Mugisha Olivier Store</h1>
+        </div>
+        <div class="language-switch">
+            <button class="lang-btn" data-lang="en">English</button>
+            <button class="lang-btn" data-lang="fr">Français</button>
+            <button class="lang-btn" data-lang="rw">Ikinyarwanda</button>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav id="navbar">
+            <ul>
+                <li><a href="#home" data-key="home">Home</a></li>
+                <li><a href="#products" data-key="products">Products</a></li>
+                <li><a href="#about" data-key="about">About</a></li>
+                <li><a href="#contact" data-key="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- ========== LARGE HERO SECTION ========== -->
+<section class="hero-large" id="home">
+    <div class="hero-content">
+        <h1 data-key="hero_title">Welcome to Mugisha Olivier Store</h1>
+        <p data-key="hero_desc">Your premium destination for quality electronics, fashion & home appliances</p>
+        <a href="#products" class="btn-large" data-key="shop_now">Shop Now <i class="fas fa-arrow-right"></i></a>
+    </div>
+</section>
+
+<!-- ========== LARGE FEATURES SECTION ========== -->
+<section class="features-large">
+    <div class="container">
+        <div class="feature-card">
+            <i class="fas fa-truck-fast"></i>
+            <h3 data-key="fast_delivery">Fast Delivery</h3>
+            <p data-key="fast_delivery_desc">Within 24-48 hours across Rwanda</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3 data-key="secure_payment">Secure Payment</h3>
+            <p data-key="secure_payment_desc">100% safe transactions</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-headset"></i>
+            <h3 data-key="support">24/7 Customer Support</h3>
+            <p data-key="support_desc">We're always here for you</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-undo-alt"></i>
+            <h3 data-key="easy_returns">Easy Returns</h3>
+            <p data-key="easy_returns_desc">30 days return policy</p>
+        </div>
+    </div>
+</section>
+
+<!-- ========== LARGE CATEGORY BANNERS ========== -->
+<section class="category-banners">
+    <div class="banner-large">
+        <div class="banner-content">
+            <h2 data-key="electronics_title">Premium Electronics</h2>
+            <p data-key="electronics_desc">Discover the latest smartphones, laptops, and gadgets at unbeatable prices.</p>
+            <a href="#products" class="btn" data-key="shop_now">Shop Electronics →</a>
+        </div>
+        <div class="banner-image" style="background-image: url('https://images.unsplash.com/photo-1498049794561-7780e7231661?w=800&h=500&fit=crop');"></div>
+    </div>
+    <div class="banner-large reverse">
+        <div class="banner-content">
+            <h2 data-key="fashion_title">Trendy Fashion</h2>
+            <p data-key="fashion_desc">Upgrade your wardrobe with our latest collection of clothes, shoes, and accessories.</p>
+            <a href="#products" class="btn" data-key="shop_now">Shop Fashion →</a>
+        </div>
+        <div class="banner-image" style="background-image: url('https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=500&fit=crop');"></div>
+    </div>
+    <div class="banner-large">
+        <div class="banner-content">
+            <h2 data-key="home_title">Home Appliances</h2>
+            <p data-key="home_desc">Make your life easier with quality home appliances from top brands.</p>
+            <a href="#products" class="btn" data-key="shop_now">Shop Home →</a>
+        </div>
+        <div class="banner-image" style="background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=500&fit=crop');"></div>
+    </div>
+</section>
+
+<!-- ========== LARGE PRODUCTS SECTION ========== -->
+<section class="products-large" id="products">
+    <div class="container">
+        <div class="section-header">
+            <h2 data-key="featured_products">🔥 Featured Products</h2>
+            <p data-key="featured_desc">Hand-picked just for you</p>
+        </div>
+        <div class="product-grid-large" id="product-list">
+            <!-- Products loaded by JS -->
+        </div>
+    </div>
+</section>
+
+<!-- ========== LARGE OFFER BANNER WITH COUNTDOWN ========== -->
+<section class="offer-banner-large">
+    <div class="container">
+        <h2 data-key="offer_title">🎉 Limited Time Offer! 🎉</h2>
+        <p data-key="offer_desc">Get up to 50% OFF on selected items + Free Shipping</p>
+        <div class="countdown" id="countdown">
+            <div><span id="days">00</span><br>Days</div>
+            <div><span id="hours">00</span><br>Hours</div>
+            <div><span id="minutes">00</span><br>Mins</div>
+            <div><span id="seconds">00</span><br>Secs</div>
+        </div>
+        <a href="#products" class="btn-large" data-key="shop_now">Grab Offer Now →</a>
+    </div>
+</section>
+
+<!-- ========== LARGE TESTIMONIALS SECTION ========== -->
+<section class="testimonials-large">
+    <div class="container">
+        <div class="section-header">
+            <h2 data-key="what_customers_say">💬 What Our Customers Say</h2>
+            <p data-key="testimonial_desc">Join thousands of happy customers</p>
+        </div>
+        <div class="testimonial-grid-large">
+            <div class="testimonial-card">
+                <div class="quote"><i class="fas fa-quote-left"></i></div>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <p>"Mugisha Olivier Store is the best in Kigali! Fast delivery and amazing quality products. I highly recommend!"</p>
+                <h4>- Jean Paul N.</h4>
+            </div>
+            <div class="testimonial-card">
+                <div class="quote"><i class="fas fa-quote-left"></i></div>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <p>"I bought a laptop and it arrived in 24 hours. Professional service and great prices. Will shop again!"</p>
+                <h4>- Amina Uwase</h4>
+            </div>
+            <div class="testimonial-card">
+                <div class="quote"><i class="fas fa-quote-left"></i></div>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <p>"Excellent customer support and easy return policy. The best online store in Rwanda!"</p>
+                <h4>- Eric Mugisha</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== LARGE NEWSLETTER SECTION ========== -->
+<section class="newsletter-large">
+    <div class="container">
+        <h2 data-key="newsletter_title">📧 Stay Updated!</h2>
+        <p data-key="newsletter_desc">Subscribe to get exclusive offers, new arrivals, and discounts directly to your inbox.</p>
+        <form id="newsletter-form">
+            <input type="email" id="news-email" placeholder="Your email address" required>
+            <button type="submit" data-key="subscribe">Subscribe Now →</button>
+        </form>
+    </div>
+</section>
+
+<!-- ========== LARGE CONTACT SECTION ========== -->
+<section class="contact-large" id="contact">
+    <div class="container">
+        <div class="section-header">
+            <h2 data-key="contact_us">📞 Get In Touch</h2>
+            <p data-key="contact_desc">We'd love to hear from you</p>
+        </div>
+        <div class="contact-grid-large">
+            <div class="contact-info-large">
+                <h3>Contact Information</h3>
+                <p><i class="fas fa-map-marker-alt"></i> KN 5 Street, Kigali, Rwanda</p>
+                <p><i class="fas fa-phone"></i> +250 788 123 456</p>
+                <p><i class="fas fa-envelope"></i> info@mugishaolivier.com</p>
+                <p><i class="fas fa-clock"></i> Mon - Sat: 8:00 AM - 8:00 PM</p>
+                <div class="social-icons-large">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="contact-form-large">
+                <form id="contact-form">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" data-key="send_message">Send Message <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h3><i class="fas fa-store"></i> Mugisha Olivier Store</h3>
+                <p>Quality products, best prices, and exceptional service since 2020.</p>
+            </div>
+            <div>
+                <h4 data-key="quick_links">Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#products">Electronics</a></li>
+                    <li><a href="#products">Fashion</a></li>
+                    <li><a href="#products">Home Appliances</a></li>
+                    <li><a href="#products">Smartphones</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Mugisha Olivier Store. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #e67e22;"></i> in Rwanda</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to top button -->
+<div class="scroll-top" id="scrollTop">
+    <i class="fas fa-arrow-up"></i>
+</div>
+
+<script>
+    // Language translations
+    const translations = {
+        en: {
+            home: "Home", products: "Products", about: "About", contact: "Contact",
+            shop_now: "Shop Now", hero_title: "Welcome to Mugisha Olivier Store",
+            hero_desc: "Your premium destination for quality electronics, fashion & home appliances",
+            fast_delivery: "Fast Delivery", secure_payment: "Secure Payment",
+            support: "24/7 Customer Support", easy_returns: "Easy Returns",
+            fast_delivery_desc: "Within 24-48 hours across Rwanda",
+            secure_payment_desc: "100% safe transactions",
+            support_desc: "We're always here for you",
+            easy_returns_desc: "30 days return policy",
+            electronics_title: "Premium Electronics",
+            electronics_desc: "Discover the latest smartphones, laptops, and gadgets",
+            fashion_title: "Trendy Fashion",
+            fashion_desc: "Upgrade your wardrobe with our latest collection",
+            home_title: "Home Appliances",
+            home_desc: "Make your life easier with quality home appliances",
+            featured_products: "🔥 Featured Products",
+            featured_desc: "Hand-picked just for you",
+            offer_title: "🎉 Limited Time Offer! 🎉",
+            offer_desc: "Get up to 50% OFF on selected items + Free Shipping",
+            what_customers_say: "💬 What Our Customers Say",
+            testimonial_desc: "Join thousands of happy customers",
+            newsletter_title: "📧 Stay Updated!",
+            newsletter_desc: "Subscribe to get exclusive offers, new arrivals, and discounts",
+            subscribe: "Subscribe Now →",
+            contact_us: "📞 Get In Touch",
+            contact_desc: "We'd love to hear from you",
+            send_message: "Send Message",
+            quick_links: "Quick Links"
+        },
+        fr: {
+            home: "Accueil", products: "Produits", about: "À propos", contact: "Contact",
+            shop_now: "Acheter", hero_title: "Bienvenue chez Mugisha Olivier Store",
+            hero_desc: "Votre destination premium pour l'électronique, la mode et l'électroménager",
+            fast_delivery: "Livraison rapide", secure_payment: "Paiement sécurisé",
+            support: "Support client 24/7", easy_returns: "Retours faciles",
+            electronics_title: "Électronique premium", fashion_title: "Mode tendance",
+            home_title: "Électroménager", featured_products: "🔥 Produits phares",
+            offer_title: "🎉 Offre à durée limitée! 🎉",
+            what_customers_say: "💬 Ce que disent nos clients",
+            newsletter_title: "📧 Restez informé!", subscribe: "S'abonner →",
+            contact_us: "📞 Contactez-nous", send_message: "Envoyer", quick_links: "Liens rapides"
+        },
+        rw: {
+            home: "Ahabanza", products: "Ibicuruzwa", about: "Ibyerekeye", contact: "Twandikire",
+            shop_now: "Gura ubu", hero_title: "Murakaza neza kuri Mugisha Olivier Store",
+            hero_desc: "Ahantu nyaburanga haboneka ibicuruzwa byiza",
+            fast_delivery: "Kohereza vuba", secure_payment: "Kwishyura bitewe",
+            support: "Ubufasha 24/7", easy_returns: "Kugarura byoroshye",
+            electronics_title: "Eletroniki nziza", fashion_title: "Imyenda ya kijyambere",
+            home_title: "Ibikoresho byo mu rugo", featured_products: "🔥 Ibicuruzwa bikomeye",
+            offer_title: "🎉 Igiciro kidasanzwe! 🎉",
+            what_customers_say: "💬 Ibyo abakiriya bavuga",
+            newsletter_title: "📧 Komeza umenye!", subscribe: "Iyandikishe →",
+            contact_us: "📞 Twandikire", send_message: "Ohereza ubutumwa", quick_links: "Ihuzo"
+        }
+    };
+
+    let currentLang = "en";
+
+    function changeLanguage(lang) {
+        currentLang = lang;
+        document.querySelectorAll("[data-key]").forEach(el => {
+            const key = el.getAttribute("data-key");
+            if (translations[lang][key]) {
+                if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+                    el.placeholder = translations[lang][key];
+                } else {
+                    el.innerText = translations[lang][key];
+                }
+            }
+        });
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const msgInput = document.getElementById("message");
+        if (nameInput) nameInput.placeholder = lang === "en" ? "Your Name" : lang === "fr" ? "Votre nom" : "Izina ryawe";
+        if (emailInput) emailInput.placeholder = lang === "en" ? "Your Email" : lang === "fr" ? "Votre email" : "Imeli yawe";
+        if (msgInput) msgInput.placeholder = lang === "en" ? "Your Message" : lang === "fr" ? "Votre message" : "Ubutumwa bwawe";
+    }
+
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.addEventListener("click", () => changeLanguage(btn.getAttribute("data-lang")));
+    });
+
+    // Mobile menu
+    const mobileBtn = document.getElementById("mobile-menu");
+    const navbar = document.getElementById("navbar");
+    if (mobileBtn) {
+        mobileBtn.addEventListener("click", () => navbar.classList.toggle("active"));
+    }
+
+    // Countdown Timer (7 days from now)
+    function startCountdown() {
+        const targetDate = new Date();
+        targetDate.setDate(targetDate.getDate() + 7);
+        targetDate.setHours(23, 59, 59, 999);
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = targetDate - now;
+            if (diff <= 0) {
+                document.getElementById("days").innerText = "00";
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("minutes").innerText = "00";
+                document.getElementById("seconds").innerText = "00";
+                return;
+            }
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (86400000)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (3600000)) / (1000 * 60));
+            const seconds = Math.floor((diff % (60000)) / 1000);
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    }
+    startCountdown();
+
+    // Products data
+    const products = [
+        { id: 1, name: "iPhone 14 Pro", price: "$999", oldPrice: "$1199", image: "https://via.placeholder.com/300x250?text=iPhone+14+Pro" },
+        { id: 2, name: "Samsung 55\" 4K TV", price: "$599", oldPrice: "$799", image: "https://via.placeholder.com/300x250?text=Samsung+TV" },
+        { id: 3, name: "Men's Leather Jacket", price: "$89", oldPrice: "$149", image: "https://via.placeholder.com/300x250?text=Leather+Jacket" },
+        { id: 4, name: "Air Fryer 5L", price: "$120", oldPrice: "$180", image: "https://via.placeholder.com/300x250?text=Air+Fryer" },
+        { id: 5, name: "Galaxy S23 Ultra", price: "$849", oldPrice: "$999", image: "https://via.placeholder.com/300x250?text=Galaxy+S23" },
+        { id: 6, name: "Dell XPS Laptop", price: "$1200", oldPrice: "$1499", image: "https://via.placeholder.com/300x250?text=Dell+XPS" }
+    ];
+
+    function displayProducts() {
+        const grid = document.getElementById("product-list");
+        if (grid) {
+            grid.innerHTML = products.map(p => `
+                <div class="product-card-large">
+                    <img src="${p.image}" alt="${p.name}">
+                    <h3>${p.name}</h3>
+                    <p class="price">${p.price} <span class="old-price">${p.oldPrice}</span></p>
+                    <button class="add-to-cart-large" data-id="${p.id}">Add to Cart <i class="fas fa-shopping-cart"></i></button>
+                </div>
+            `).join("");
+            document.querySelectorAll(".add-to-cart-large").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    let msg = currentLang === "en" ? "✅ Product added to cart!" : currentLang === "fr" ? "✅ Produit ajouté au panier!" : "✅ Igicuruzwa cyongewe mu igare!";
+                    alert(msg);
+                });
+            });
+        }
+    }
+    displayProducts();
+
+    // Newsletter form
+    const newsletterForm = document.getElementById("newsletter-form");
+    if (newsletterForm) {
+        newsletterForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let msg = currentLang === "en" ? "✅ Subscribed successfully!" : currentLang === "fr" ? "✅ Abonné avec succès!" : "✅ Urakoze kwiyandikisha!";
+            alert(msg);
+            newsletterForm.reset();
+        });
+    }
+
+    // Contact form
+    const contactForm = document.getElementById("contact-form");
+    if (contactForm) {
+        contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let msg = currentLang === "en" ? "Thank you! We'll get back to you soon." : currentLang === "fr" ? "Merci! Nous vous répondrons bientôt." : "Urakoze! Tuzakugarukira vuba.";
+            alert(msg);
+            contactForm.reset();
+        });
+    }
+
+    // Scroll to top button
+    const scrollTopBtn = document.getElementById("scrollTop");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            scrollTopBtn.classList.add("show");
+        } else {
+            scrollTopBtn.classList.remove("show");
+        }
+    });
+    scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll("nav ul li a").forEach(link => {
+        link.addEventListener("click", () => {
+            if (window.innerWidth <= 768 && navbar) navbar.classList.remove("active");
+        });
+    });
+
+    changeLanguage("en");
+</script>
+</body>
+</html>
